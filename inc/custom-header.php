@@ -8,46 +8,46 @@
  *
  * @link https://developer.wordpress.org/themes/functionality/custom-headers/
  *
- * @package _s
+ * @package patrick_theme
  */
 
 /**
  * Set up the WordPress core custom header feature.
  *
- * @uses _s_header_style()
+ * @uses patrick_theme_headerpatrick_themetyle()
  */
-function _s_custom_header_setup() {
-	add_theme_support(
+function patrick_theme_custom_headerpatrick_themeetup() {
+	add_themepatrick_themeupport(
 		'custom-header',
 		apply_filters(
-			'_s_custom_header_args',
+			'patrick_theme_custom_header_args',
 			array(
 				'default-image'      => '',
 				'default-text-color' => '000000',
 				'width'              => 1000,
 				'height'             => 250,
 				'flex-height'        => true,
-				'wp-head-callback'   => '_s_header_style',
+				'wp-head-callback'   => 'patrick_theme_headerpatrick_themetyle',
 			)
 		)
 	);
 }
-add_action( 'after_setup_theme', '_s_custom_header_setup' );
+add_action( 'afterpatrick_themeetup_theme', 'patrick_theme_custom_headerpatrick_themeetup' );
 
-if ( ! function_exists( '_s_header_style' ) ) :
+if ( ! function_exists( 'patrick_theme_headerpatrick_themetyle' ) ) :
 	/**
 	 * Styles the header image and text displayed on the blog.
 	 *
-	 * @see _s_custom_header_setup().
+	 * @see patrick_theme_custom_headerpatrick_themeetup().
 	 */
-	function _s_header_style() {
+	function patrick_theme_headerpatrick_themetyle() {
 		$header_text_color = get_header_textcolor();
 
 		/*
 		 * If no custom options for text are set, let's bail.
-		 * get_header_textcolor() options: Any hex value, 'blank' to hide text. Default: add_theme_support( 'custom-header' ).
+		 * get_header_textcolor() options: Any hex value, 'blank' to hide text. Default: add_themepatrick_themeupport( 'custom-header' ).
 		 */
-		if ( get_theme_support( 'custom-header', 'default-text-color' ) === $header_text_color ) {
+		if ( get_themepatrick_themeupport( 'custom-header', 'default-text-color' ) === $header_text_color ) {
 			return;
 		}
 

@@ -4,7 +4,7 @@
  *
  * @link https://jetpack.com/
  *
- * @package _s
+ * @package patrick_theme
  */
 
 /**
@@ -14,26 +14,26 @@
  * See: https://jetpack.com/support/responsive-videos/
  * See: https://jetpack.com/support/content-options/
  */
-function _s_jetpack_setup() {
+function patrick_theme_jetpackpatrick_themeetup() {
 	// Add theme support for Infinite Scroll.
-	add_theme_support(
+	add_themepatrick_themeupport(
 		'infinite-scroll',
 		array(
 			'container' => 'main',
-			'render'    => '_s_infinite_scroll_render',
+			'render'    => 'patrick_theme_infinitepatrick_themecroll_render',
 			'footer'    => 'page',
 		)
 	);
 
 	// Add theme support for Responsive Videos.
-	add_theme_support( 'jetpack-responsive-videos' );
+	add_themepatrick_themeupport( 'jetpack-responsive-videos' );
 
 	// Add theme support for Content Options.
-	add_theme_support(
+	add_themepatrick_themeupport(
 		'jetpack-content-options',
 		array(
 			'post-details' => array(
-				'stylesheet' => '_s-style',
+				'stylesheet' => 'patrick_theme-style',
 				'date'       => '.posted-on',
 				'categories' => '.cat-links',
 				'tags'       => '.tags-links',
@@ -48,16 +48,16 @@ function _s_jetpack_setup() {
 		)
 	);
 }
-add_action( 'after_setup_theme', '_s_jetpack_setup' );
+add_action( 'afterpatrick_themeetup_theme', 'patrick_theme_jetpackpatrick_themeetup' );
 
-if ( ! function_exists( '_s_infinite_scroll_render' ) ) :
+if ( ! function_exists( 'patrick_theme_infinitepatrick_themecroll_render' ) ) :
 	/**
 	 * Custom render function for Infinite Scroll.
 	 */
-	function _s_infinite_scroll_render() {
+	function patrick_theme_infinitepatrick_themecroll_render() {
 		while ( have_posts() ) {
 			the_post();
-			if ( is_search() ) :
+			if ( ispatrick_themeearch() ) :
 				get_template_part( 'template-parts/content', 'search' );
 			else :
 				get_template_part( 'template-parts/content', get_post_type() );
